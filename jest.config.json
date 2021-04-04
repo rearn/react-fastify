@@ -1,0 +1,26 @@
+{
+  "moduleFileExtensions": [
+    "ts",
+    "js"
+  ],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.json"
+    }
+  },
+  "moduleNameMapper": {
+    "^@backend/(.*)$": "<rootDir>/src/backend/$1",
+    "^@frontend/(.*)$": "<rootDir>/src/frontend/$1"
+  },
+  "testMatch": [
+    "<rootDir>/tests/**/*.test.ts"
+  ],
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.ts",
+    "!<rootDir>/src/server/migration/**",
+    "!<rootDir>/src/server/www.ts"
+  ]
+}

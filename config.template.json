@@ -1,0 +1,88 @@
+{
+  "common": {
+    "db": {
+      "type": "mariadb",
+      "synchronize": false,
+      "logging": true,
+      "entities": [
+        "dist/db/entity/**/*.js"
+      ],
+      "migrations": [
+        "dist/db/migration/**/*.js"
+      ],
+      "subscribers": [
+        "dist/db/subscriber/**/*.js"
+      ],
+      "cli": {
+        "entitiesDir": "src/backend/db/entity",
+        "migrationsDir": "src/backend/db/migration",
+        "subscribersDir": "src/backend/db/subscriber"
+      }
+    }
+  },
+  "uniquely": [
+    {
+      "name": "development",
+      "db": [
+        {
+          "name": "write",
+          "host": "maria",
+          "port": 3306,
+          "username": "docker",
+          "password": "docker",
+          "database": "test_database"
+        },
+        {
+          "name": "read",
+          "host": "maria",
+          "port": 3306,
+          "username": "docker",
+          "password": "docker",
+          "database": "test_database"
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "db": [
+        {
+          "name": "write",
+          "host": "localhost",
+          "port": 3306,
+          "username": "test",
+          "password": "test",
+          "database": "test_database"
+        },
+        {
+          "name": "read",
+          "host": "localhost",
+          "port": 3306,
+          "username": "test",
+          "password": "test",
+          "database": "test_database"
+        }
+      ]
+    },
+    {
+      "name": "production",
+      "db": [
+        {
+          "name": "write",
+          "host": "maria",
+          "port": 3306,
+          "username": "",
+          "password": "",
+          "database": ""
+        },
+        {
+          "name": "read",
+          "host": "maria",
+          "port": 3306,
+          "username": "",
+          "password": "",
+          "database": ""
+        }
+      ]
+    }
+  ]
+}
